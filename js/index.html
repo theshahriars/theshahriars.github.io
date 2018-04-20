@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Oka Done</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .icon {
+            color: blueviolet;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        document.onmousemove = animateicons;
+
+        function animateicons(event) {
+            var icon = document.createElement("i");
+            icon.setAttribute('class', 'fa fa-gear icon');
+            document.body.appendChild(icon);
+
+            // Adding random colors
+            var colors = ['#1abc9c', '#2ecc71', '#3498db', '#9b59b6', '#34495e', '#f1c40f', '#e67e22', '#d35400', '#95a5a6']
+            var color = colors[Math.floor(Math.random() * colors.length)];
+            icon.style.color = color;
+
+            // Adding icon positions
+            icon.style.left = event.clientX + 'px';
+            icon.style.top = event.clientY + 'px';
+
+            // icon transitions
+            icon.style.transition = "all 0.5s linear 0s";
+
+            // Changing icon position
+            icon.style.left = icon.offsetLeft - 20 + 'px';
+            icon.style.top = icon.offsetTop - 20 + 'px';
+
+            // Changing properties
+            icon.style.fontSize = '60px';
+            icon.style.opacity = 0;
+        }
+    </script>
+</body>
+
+</html>
